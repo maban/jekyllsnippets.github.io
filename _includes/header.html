@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% if page.title %} {{ page.title }} - JekyllSnippets.com {% else %} JekyllSnippets.com - Snippets, Tutorials, Resources {% endif %}</title>
+    <link rel="stylesheet" href="{{ site.baseurl }}assets/css/style.css">
+    <link rel="stylesheet" href="http://cdn.kevingimbel.me/css/bullgrid.beta.css">
+    <meta name="viewport" content="width=device-width">
+</head>
+<body>
+<div class="wrapper">
+<header class="gw  site__header">
+    <div class="g three-quarters  medium-one-half small-one-whole">
+    <h1><a href="/">JekyllSnippets.com</a></h1>
+    <h6>Snippets, Tutorials, Resources</h6>
+    </div>
+
+    <div class="g one-quarter  medium-one-half small-one-whole">
+        {% include navigation.html %}
+    </div>
+</header>

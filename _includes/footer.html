@@ -1,0 +1,30 @@
+
+    <footer class="gw  block__footer">
+        <div class="g two-thirds small-one-whole">
+            <p>Handmade using <a href="http://sass-lang.com">Sass</a>, <a href="http://compass-style.org">Compass</a>, <a href="http://gruntjs.com">Grunt</a>, <a href="http://sublimetext.com">Sublime Text 2</a> and <span class="love">&hearts;</span>.</p>
+        </div>
+        <aside class="g one-third small-one-whole">
+            <p>Hosted on <a href="http://github.com/JekyllSnippets/jekyllsnippets.github.io" title="Hosted on Github">Github</a></p>
+        </aside>
+    </footer>
+</div>
+</body>
+<script type="text/javascript">
+    // after the DOM is loaded the JavaScript
+    // get's added. This speeds up the page's load
+    function loadJSafterDom() {
+        var el = document.createElement("script");
+        el.src = "/assets/js/main.min.js";
+        document.body.appendChild(el);
+    }
+
+    // Check browser support and insert the script
+    if(window.addEventListener) {
+        window.addEventListener("load", loadJSafterDom, false);        
+    } else if(window.attachEvent) {
+        window.attachEvent("onload", loadJSafterDom);        
+    } else {
+        window.onload = loadJSafterDom;        
+    }
+</script>
+</html>

@@ -1,0 +1,14 @@
+{% include header.html %}
+<article class="gw article">
+    <h2 class="fontawesome-list"> Link List</h2>
+    <p>Resources, Tutorials and Blog Posts about Jekyll.</p>
+{% for post in site.posts %}
+    {% if post.category == "link" %}
+    <article class="article--link  g one-half small-one-whole">
+        <h2><a href="{{ post.link }}">{{ post.title }}</a></h2>
+            {{ post.excerpt }}
+    </article>  
+    {% endif %}
+{% endfor %}
+</article>
+{% include footer.html %}

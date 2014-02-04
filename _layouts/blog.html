@@ -1,0 +1,20 @@
+{% include header.html %}
+<article class="article gw">
+    <h2 class="fontawesome-pencil"> Blog</h2>
+    <p>Below you find a list of all articles published on JekyllSnippets.com - this excludes external resources. They can be found under in <a href="/links">link list</a>.</p>
+{% for post in site.posts %}
+
+    {% if post.category == "link" %}
+    {% else if %}
+    <article class="g one-half small-one-whole">
+        <hgroup class="article__head">
+            <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+        </hgroup>
+        <div class="article__body">
+            {{ post.excerpt }}
+        </div>
+    </article>
+    {% endif %}  
+{% endfor %}
+</article>
+{% include footer.html %}

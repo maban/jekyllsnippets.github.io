@@ -1,0 +1,22 @@
+.article {
+    padding:3em;
+    background: #fff;
+
+    p {
+        margin:.5em 0 1em 0;
+    }
+
+    img {
+        max-width: 100%;
+    }
+}
+
+.article__head {
+    h3 {
+        padding:0 0 2% 0;
+
+        &:before {
+            color:darken(#ddd,10%);
+        }
+    }
+}

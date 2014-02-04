@@ -1,0 +1,47 @@
+{% include header.html %}
+
+{% include info.html %}
+
+<div class="gw">
+    <div class="g two-thirds  small-one-whole  block__posts">
+            <h2>Latest Posts</h2>
+        {% for post in site.posts limit: 5 %}
+            <article class="g one-whole small-one-whole">
+                <hgroup class="article__head">
+                    <h3 class="{% if post.category == "link" %}fontawesome-globe{% else %}fontawesome-pencil{% endif %}"> 
+                        <a href="{% if post.category == "link" %}{{ post.link }}{% else %}{{ post.url }}{% endif %}">
+                            {{ post.title }}
+                        </a>
+                    </h3>
+                </hgroup>
+            </article>
+        {% endfor %}
+    </div>
+    <div class="g one-third  small-one-whole">
+        <div class="gw">
+           
+            <div class="g one-half  block__social--twitter">
+                <a href="http://twitter.com/JekyllSnippets" class="social__block--link" title="Follow us on Twitter!">
+                    <h2 class="fontawesome-twitter  block__social--icon"></h2>
+                </a>
+            </div>
+            <div class="g one-half  block__social--gitter">
+                <a href="https://gitter.im/JekyllSnippets" class="social__block--link" title="Say Hi on Gitter!">
+                    <h2 class="fontawesome-comments  block__social--icon"></h2>
+                </a>
+            </div>
+            <div class="g one-half  block__social--github">
+               <a href="http://github.com/JekyllSnippets" class="social__block--link" title="Star, Fork, Watch us on Github!">
+               <h2 class="fontawesome-github  block__social--icon"></h2>
+               </a>
+            </div>
+            <div class="g one-half block__social--contribute">
+                <a href="http://github.com/JekyllSnippets" class="social__block--link" title="Contribute to the awesomeness!">
+                    <h2 class="fontawesome-group  block__social--icon"></h2>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include footer.html %}

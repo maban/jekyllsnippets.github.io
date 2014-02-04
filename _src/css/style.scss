@@ -1,0 +1,158 @@
+/*
+    Loading Compass to use all of it's power
+*/
+@import "compass";
+
+/*
+    clearfix above the includes so it can be used everywhere.    
+*/
+%cf {
+    *zoom:1;
+    &:before, &:after {
+        content: "\0020";
+        display: block;
+        height: 0;
+        overflow: hidden;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+/*
+    COMPONENTS 
+    
+    In Components we define things 
+    like variables, typography or additional
+    libraries - Grid systems for example.
+*/
+
+@import "components/vars", /* vars neet to be loaded first so they can be used everywhere */
+        "components/typography", /* h1-h6, strong, b, i, em are defined here as well has heading modifiers */
+        "components/iconfont"; /* icon font from weloveiconfonts.com */
+
+
+/*
+    MODULES 
+    
+    Broke down into servel files modules are used 
+    to organize the whole CSS. If you add new modules or components
+    make sure to leave a comment behind to describe what
+    is in this file. This makes organizing a lot easier.
+*/
+
+@import "modules/boxes",  /* all container elements are defined here */
+        "modules/navigation",  /* all Navigation related stuff */
+        "modules/article";  /* Article */
+
+@import "vendor/syntax";
+
+
+/*
+    a basic reset
+*/
+* {
+    margin:0;
+    padding:0;
+    @include box-sizing(border-box);
+}
+
+body {
+    font: 1rem/1.6 Arial, Helvetica, sans-serif;
+    background: #999;
+    color:#111;
+}
+
+
+a {
+    text-decoration: none;
+    color: $color--accent;
+    &:hover {
+        color:lighten($color--accent,20%);
+    }
+}
+
+.love {
+    color:darken(red,10%);
+}
+
+.site__header {
+    background:#333;
+    padding:2.5em;
+
+    h1 {
+        letter-spacing: -0.1em;
+        
+        span {
+            background: $color--accent-dark;
+            color:$color--grey;
+        }
+    }
+}
+
+@media all and (max-width: 35em) {
+    .site__header h1 {
+        font-size: 2em;
+    }
+}
+
+
+
+.repo--showcase {
+    margin:2.5em 0;
+    padding:2.5em;
+
+}
+
+.repo--showcase--headline {
+    color:$color--accent;
+}
+
+.repo {
+    margin:.5em 0;
+    
+    h3 {
+        word-break: break-word; /* in case headlines are way too long */
+    }
+
+    p {
+        padding:1em 1.5em;        
+    }
+
+    hgroup {
+        background: $color--accent-dark;
+        color:$color--grey;
+        padding:1em 1.5em;
+        @include border-top-radius(3px);
+    }
+}
+
+
+
+
+
+
+
+.members {
+    margin:.5em 0 2.5em 0;
+}
+
+.member {
+    width: 100%;
+
+    .avatar {
+        max-width: 100%;
+        //@include border-radius(100%);
+    }
+
+    ul {
+        width: 100%;
+    }
+
+   li {
+        list-style-type: none;
+        display: inline;
+        font-size: 2em;
+        margin: 0 .25em;
+    }
+}

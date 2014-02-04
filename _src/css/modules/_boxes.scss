@@ -1,0 +1,131 @@
+/*
+    BOX
+
+    All container elements are defined here
+*/
+
+
+.wrapper {
+    width:100%;
+    max-width: 60em;
+    margin:0 auto;
+}
+
+.block__posts {
+    background: #f1f1f1;
+    height:20em;
+    padding:1em;
+
+    .article__head, h2 {
+        padding-left: 1em;
+    }
+}
+
+/*
+    Info Block
+    What we do, what we want, License.
+    Used on Index
+*/
+
+.block__info {
+    padding:1.5em !important;
+    min-height: 20em;
+    text-align: center;
+}
+
+.block__info--icon {
+    width:2em;
+    height:2em;
+    font-size: 2.5em;
+    color:#ddd;
+    text-shadow:1px 1px 0 darken(#ddd,40%);
+    border-radius: 100%;
+    padding:.25em 0 0 .45em;
+    margin: 0 auto;
+}
+
+.block__info--headline {
+    text-align: center;
+}
+
+
+/*
+    Social Blocks
+
+    Display Twitter, Gitter, Github & Contribute Links
+*/
+%block__social {
+    width:10em;
+    height:10em;
+    position: relative;
+    .block__social--icon {
+        font-size: 3em;
+        text-align: center;
+        position:absolute;
+        top:50%;
+        left:50%;
+        @include transform(translate(-50%, -50%));
+    }
+
+    .block__social--link {
+        display:block;
+        width:100%;
+        height:100%;
+    }
+}
+
+.block__social--twitter {
+    background: #55acee;
+    @extend %block__social;
+
+    a {
+        color:darken(#55acee, 20%);
+
+            &:hover {
+                color:darken(#55acee, 40%);
+            }
+    }
+}
+.block__social--gitter {
+    background:#333;
+    @extend %block__social;
+
+    a {
+        color:#ddd;
+        
+            &:hover {
+                color:darken(#ddd,20%);
+            }
+    }
+}
+.block__social--github {
+    background:#999;
+    @extend %block__social;
+
+    a {
+        color:#333;
+
+            &:hover {
+                color: darken(#333,20%);
+            }
+    }
+}
+.block__social--contribute {
+    background:$color--accent;
+    @extend %block__social;
+
+    a {
+        color: darken($color--accent, 10%);
+
+            &:hover {
+                color:darken($color--accent,30%);
+            }
+    }
+}
+
+
+.block__footer {
+    background: #333;
+    color:#ddd;
+    padding:1.5em;
+}
