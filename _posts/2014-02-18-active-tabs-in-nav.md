@@ -20,7 +20,7 @@ One way to display an active tab is to compare the current page's url with the n
 	<a href="/news.html">News</a>
     </li>
     <li{% if page.url == '/contact.html' %} class="active"{% endif %}>
-	<a href="/contact.html">Careers</a>
+	<a href="/contact.html">Contact</a>
     </li>
   </ul>
   {% endraw %}
