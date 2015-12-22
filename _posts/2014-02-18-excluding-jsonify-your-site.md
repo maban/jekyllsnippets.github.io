@@ -22,14 +22,14 @@ I created a file called `site.json` and added these contents:
 	      "title"    : "{{ post.title }}",
 	      "url"     : "{{ post.url }}",
 	      "date"     : "{{ post.date | date: "%B %d, %Y" }}",
-	      "content"  : "{{ post.content | escape }}"
+	      "content"  : "{{ post.content | jsonify }}"
 	    } {% if forloop.last %}{% else %},{% endif %}
 	{% endfor %}
     ] 
   {% endraw %}
 {% endhighlight %}
 
-If you omit the `escape` by "content", double quotes in your content might break your json.
+If you omit the `jsonify` by "content", double quotes in your content might break your json.
 
 Happy Ajaxing!
 
